@@ -25,5 +25,8 @@ The example demonstrates a privilege escalation vulnerability and how to exploit
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+    There is a privilege escalation vulnerability since there is no real authentication or authorization before modifying sensitive information.
 2. Briefly explain how a malicious attacker can exploit them.
+    The attacker can just guess user IDs until they find the admin's ID and then execute the form as the admin.
 3. Briefly explain the defensive techniques used in **secure.ts** to prevent the privilege escalation vulnerability?
+    secure.ts implements session-based authentication and then uses that to verify that the user has logged in.
