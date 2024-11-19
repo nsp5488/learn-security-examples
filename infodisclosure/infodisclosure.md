@@ -31,5 +31,8 @@ This will create a database in MongoDB called __infodisclosure__. Verify its pre
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+    The vulnerability in this case is a nosql injection. 
 2. Briefly explain how a malicious attacker can exploit them.
+    We can exploit this vulnerability by passing a mongoDB statement as a username, which the engine will execute when it attempts to execute the search. 
 3. Briefly explain the defensive techniques used in **secure.ts** to prevent the information disclosure vulnerability?
+    There are two defensive techniques employed in secure.ts. One is to ensure that the type of the username is actually a string, rather than assuming that it is. The other defensive technique is to sanitize the string itself to ensure that no special characters are used. This eliminates the risk of NoSQL injection.
