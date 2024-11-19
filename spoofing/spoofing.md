@@ -30,5 +30,10 @@ This example demonstrates spoofind through two ways -- Stealing cookies programm
 ## For you to answer
 
 1. Briefly explain the spoofing vulnerability in **insecure.ts**.
+    Because the cookies are able to be used from any site (sameSite is off), if a cookie is intercepted by a man in the middle it can be used to access privileged information via a spoofing attack.
+    Since the cookies are also not httpOnly, scripts can extract the cookie and use its token for future requests, thus enabling a different form of the spoofing attack
 2. Briefly explain different ways in which vulnerability can be exploited.
+    One of the ways to exploit the vulnerability is through cross-site request forgery, by submitting a request to the vulnerable server, since sameSite is disabled on the cookie, the browser will automatically pass the cookie to the vulnerable website and allow for requests to be made.
+    Another way to exploit the vulnerability is by using a script to capture the vulnerable cookies so that they can be used for future attacks.
 3. Briefly explain why **secure.ts** does not have the spoofing vulnerability in **insecure.ts**.
+    secure.ts fixes the vulnerabilities by enabling sameSite and httpOnly on the cookies.

@@ -25,5 +25,8 @@ This example demonstrates tampering through script injection.
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+    User entered input is reflected as-is to the webpage without any sanitization. This lends itself to XSS vulnerabilities.
 2. Briefly explain how a malicious attacker can exploit them.
+    By entering a malicious string (particularly something in a ```<script>``` tag), and hitting submit.
 3. Briefly explain why **secure.ts** does not have the same vulnerabilties?
+    secure.ts fixes the vulnerability by properly HTML encoding the inputs and sanitizing them before displaying them back to the user.
